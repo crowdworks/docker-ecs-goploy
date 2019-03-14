@@ -7,5 +7,6 @@ RUN wget https://github.com/h3poteto/ecs-goploy/releases/download/${ECS_GOPLOY_V
 
 FROM alpine:3.9
 
+RUN apk add --no-cache ca-certificates
 COPY --from=builder /usr/local/bin/ecs-goploy /usr/local/bin/ecs-goploy
 ENTRYPOINT ["ecs-goploy"]
